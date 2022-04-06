@@ -42,8 +42,8 @@ io.on("connection", (socket) => {
         `https://sandbox.scoopm.com/v1/dispatch/tasks/-Mzx_aOajAuxjn55C8Nd/status`,
         {
           auth: {
-            username: "scoopmeals",
-            password: "LHB2oA3nOYmZ1bFYEhe4dSyjF9FLTRiX",
+            username: "",
+            password: "",
           },
         }
       )
