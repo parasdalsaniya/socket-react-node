@@ -37,29 +37,17 @@ io.on("connection", (socket) => {
 
   socket.on("send_status", (data) => {
     console.log('data of send_status', data)
-    axios
-      .get(
-        `https://sandbox.scoopm.com/v1/dispatch/tasks/-Mzx_aOajAuxjn55C8Nd/status`,
-        {
-          auth: {
-            username: "",
-            password: "",
-          },
-        }
-      )
-      .then((resp) => {
-        console.log('resp.data', resp.data)
-        socket.to(data.orderId).emit("receive_status", resp.data)
-      })
-      .catch((error) => {
-        console.log("error", error);
-      });
     
+    socket.to(data.orderId).emit("receive_status", 'updated status')
+
   })
 
-
 })
-  
+
+
+server.listen(8001, () => {
+  console.log("App run on 8001");
+})
 
 // let interval;
 
@@ -80,9 +68,7 @@ io.on("connection", (socket) => {
 //     socket.emit("FromAPI", response);
 // };
 
-server.listen(8001, () => {
-    console.log("App run on 8001");
-})
+
 
 // #####################################
 // const express = require("express");

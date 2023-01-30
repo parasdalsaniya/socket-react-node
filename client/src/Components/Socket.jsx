@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
-const EndPoint = "http://localhost:8001";
+import { EndPoint } from "../Const";
 const socket2 = io.connect(EndPoint)
 
 const Socket = () => {
