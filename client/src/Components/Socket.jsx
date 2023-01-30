@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
-import { EndPoint } from "../Const";
-const socket2 = io.connect(EndPoint)
+import { LocalEndPoint, StagingEndPoint } from "../Const";
+
+let socket2;
+if (process.env.ENV === "local") {
+  socket2 = io.connect(LocalEndPoint)
+}
+else {
+  socket2 = io.connect(StagingEndPoint)
+}
 
 const Socket = () => {
 

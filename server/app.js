@@ -12,7 +12,7 @@ app.use(index);
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3000, http://test.parasdalsaniya.me/",
     methods: ["GET", "POST"]
   }
 });
